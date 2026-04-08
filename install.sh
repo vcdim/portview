@@ -5,7 +5,7 @@ OS="$(uname -s)"
 
 # Auto-escalate to root on Linux if needed
 if [ "$OS" = "Linux" ] && [ "$(id -u)" -ne 0 ]; then
-  exec sudo bash "$0" "$@"
+  exec curl -fsSL https://vcdim.github.io/portview/install.sh | sudo bash
 fi
 
 echo "Installing portview..."
