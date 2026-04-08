@@ -16,7 +16,9 @@ var webFS embed.FS
 
 func main() {
 	port := flag.Int("port", 8080, "HTTP listen port")
+	flag.IntVar(port, "p", 8080, "HTTP listen port (shorthand)")
 	interval := flag.Duration("interval", 2*time.Second, "Data refresh interval")
+	flag.DurationVar(interval, "i", 2*time.Second, "Data refresh interval (shorthand)")
 	flag.Parse()
 
 	webContent, err := fs.Sub(webFS, "web")
