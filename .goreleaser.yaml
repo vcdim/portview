@@ -7,6 +7,7 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
+      - darwin
     goarch:
       - amd64
       - arm64
@@ -32,6 +33,16 @@ nfpms:
       - src: portview.service
         dst: /etc/systemd/system/portview.service
         type: config
+
+brews:
+  - repository:
+      owner: vcdim
+      name: portview
+      branch: homebrew
+    directory: HomebrewFormula
+    homepage: https://github.com/vcdim/portview
+    description: Lightweight web-based port monitor
+    license: MIT
 
 checksum:
   name_template: "checksums.txt"
