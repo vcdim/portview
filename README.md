@@ -4,16 +4,8 @@ Lightweight, single-binary web-based port monitor. Real-time port â†’ process â†
 
 ## Install
 
-**Linux (Debian/Ubuntu):**
-
 ```
-curl -fsSL https://vcdim.github.io/portview/install.sh | sudo bash
-```
-
-**macOS:**
-
-```
-brew install vcdim/portview/portview
+curl -fsSL https://vcdim.github.io/portview/install.sh | bash
 ```
 
 ## Usage
