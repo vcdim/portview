@@ -2,7 +2,7 @@
 set -e
 
 if [ "$(id -u)" -ne 0 ]; then
-  exec sudo bash "$0" "$@"
+  exec curl -fsSL https://vcdim.github.io/portview/uninstall.sh | sudo bash
 fi
 
 echo "Uninstalling portview..."
