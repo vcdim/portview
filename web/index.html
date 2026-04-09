@@ -195,44 +195,39 @@
     border-radius: 8px;
     padding: 16px;
   }
-  .chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-  }
   .chart-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-bottom: 8px;
   }
   .chart-legend {
     display: flex;
-    gap: 12px;
-    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    font-size: 11px;
+    margin-top: 8px;
   }
   .legend-item {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     color: var(--text-dim);
   }
   .legend-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
   }
   .legend-value {
     color: var(--text);
     font-weight: 600;
-    min-width: 32px;
-    text-align: right;
   }
   .chart-canvas {
     width: 100%;
-    height: 150px;
+    height: 200px;
     display: block;
   }
   .gpu-procs-section {
@@ -305,18 +300,14 @@
     </div>
     <div class="charts-row">
       <div class="chart-section">
-        <div class="chart-header">
-          <div class="chart-title">GPU Utilization</div>
-          <div class="chart-legend" id="utilLegend"></div>
-        </div>
+        <div class="chart-title">GPU Utilization</div>
         <canvas class="chart-canvas" id="utilChart"></canvas>
+        <div class="chart-legend" id="utilLegend"></div>
       </div>
       <div class="chart-section">
-        <div class="chart-header">
-          <div class="chart-title">Memory Usage</div>
-          <div class="chart-legend" id="memLegend"></div>
-        </div>
+        <div class="chart-title">Memory Usage</div>
         <canvas class="chart-canvas" id="memChart"></canvas>
+        <div class="chart-legend" id="memLegend"></div>
       </div>
     </div>
     <div class="gpu-procs-section" id="gpuProcsSection" style="display:none">
@@ -549,7 +540,6 @@
       var current = vals && vals.length > 0 ? vals[vals.length - 1] : 0;
       html += '<div class="legend-item">' +
         '<div class="legend-dot" style="background:' + color + '"></div>' +
-        '<span>GPU ' + g.index + '</span>' +
         '<span class="legend-value">' + current + suffix + '</span>' +
         '</div>';
     }
